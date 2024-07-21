@@ -102,10 +102,6 @@ const DesktopProfileModal = ({ open, setOpen }) => {
                                   <h3 className="text-xl font-bold capitalize sm:text-2xl">
                                     {loggedUser?.username}
                                   </h3>
-                                  {/* Online Status Indicator */}
-                                  <span className="ml-2.5 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-green-400">
-                                    <span className="sr-only">Online</span>
-                                  </span>
                                 </div>
                                 {/* User's Username */}
                                 <p className="text-sm">
@@ -125,10 +121,9 @@ const DesktopProfileModal = ({ open, setOpen }) => {
                             </dt>
                             <dd className="mt-1 text-sm sm:col-span-2">
                               <p>
-                                Hi, I'm Whitney Francis and I'm a programmer. I
-                                have an eye for detail and I'm passionate about
-                                creating beautiful, well-crafted software
-                                products.
+                                Hi, I'm Naveen and I'm a programmer. I have an
+                                eye for detail and I'm passionate about creating
+                                beautiful, well-crafted software products.
                               </p>
                             </dd>
                           </div>

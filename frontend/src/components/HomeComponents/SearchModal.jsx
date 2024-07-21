@@ -4,22 +4,16 @@ import {
   FaceFrownIcon,
   GlobeAmericasIcon,
   InformationCircleIcon,
-  UserPlusIcon,
 } from "@heroicons/react/24/outline";
 import { Combobox, Dialog, Transition } from "@headlessui/react";
 import { classNames } from "../../utils/Helpers";
 import PropTypes from "prop-types";
-import { Button } from "../index";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useToast } from "@chakra-ui/react";
-import { InboxIcon } from "@heroicons/react/24/outline";
 import { ActivityIcon } from "../index";
 
 const SearchModal = ({ open, setOpen }) => {
   const [query, setQuery] = useState("");
-  const [profileModalOpen, setProfileModalOpen] = useState(false);
-  const [selectedUser, setSelectedUser] = useState({});
 
   // Function to toggle profile modal
   const handleProfileModal = () => {
@@ -29,7 +23,6 @@ const SearchModal = ({ open, setOpen }) => {
   // React Router's navigation function
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
-  const toast = useToast();
 
   // Function to handle search and fetch users
   const handleSearch = async (e) => {
@@ -56,35 +49,6 @@ const SearchModal = ({ open, setOpen }) => {
       setUsers([]);
     }
   }, [query]);
-
-  // Function to add friend
-  const addFriend = async (u) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:8000/friend/sendFriendRequest",
-        {
-          recieverId: u._id,
-        },
-        { withCredentials: true }
-      );
-
-      toast({
-        title: `${response.data.message}`,
-        status: "success",
-        duration: 2000,
-        position: "top",
-        isClosable: true,
-      });
-    } catch (error) {
-      toast({
-        title: `${error.response.data.error}`,
-        status: "warning",
-        duration: 2000,
-        position: "top",
-        isClosable: true,
-      });
-    }
-  };
 
   return (
     <Transition.Root
