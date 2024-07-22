@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 const MyContext = createContext();
 
-const MyContextProvier = ({ children, socket }) => {
+const MyContextProvier = ({ children }) => {
   const [loggedUser, setLoggedUser] = useState(() => {
     const userInfo = localStorage.getItem("userInfo");
     return userInfo ? JSON.parse(userInfo) : undefined;
@@ -17,13 +17,8 @@ const MyContextProvier = ({ children, socket }) => {
       value={{
         loggedUser,
         setLoggedUser,
-        socket,
-        friendReq_response,
-        setFriendReq_response,
         fetchPostAgain,
         setFetchPostAgain,
-        noti,
-        setNoti,
       }}
     >
       {children}

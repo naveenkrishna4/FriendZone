@@ -31,9 +31,6 @@ mongoose
     const server = app.listen(PORT, () => {
       console.log("server has started on ", PORT);
     });
-
-    const { initializeSocketIO } = require("./socketio.js");
-    initializeSocketIO(server);
   })
   .catch((error) => {
     console.log(error);

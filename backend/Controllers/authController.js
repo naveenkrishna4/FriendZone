@@ -53,17 +53,20 @@ const login = async (req, res) => {
     //finding if user exists or not..
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ error: "email/password is invalid" }); //email doesn't exist
+      return res.status(400).json({ error: "email/password is invalid" });
     }
 
     if (password != user.password) {
       return res.status(400).json({ error: "email/password is invalid" });
     }
 
-    const expiresIn = "1h";
-    const token = jwt.sign({ userId: user._id }, secretKey, { expiresIn });
-    res.cookie("token", token, { httpOnly: true });
+    const expiresIn = 60 * 60 * 1000;
+    const token = jwt.sign({ userId: user._id }, secretKey, {
+      expiresIn: "1h",
+    });
 
+    // Setting the cookie with expiration time
+    res.cookie("token", token, { httpOnly: true, maxAge: expiresIn });
     return res
       .status(200)
       .json({ message: "successfully logged in", user: user });
