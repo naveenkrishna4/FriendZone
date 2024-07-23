@@ -8,9 +8,7 @@ const MyContextProvier = ({ children }) => {
     return userInfo ? JSON.parse(userInfo) : undefined;
   });
 
-  const [friendReq_response, setFriendReq_response] = useState(false); //for re-fetching friend request
-  const [fetchPostAgain, setFetchPostAgain] = useState(false); //for re-fetching friend request
-  const [noti, setNoti] = useState([]);
+  const [fetchPostAgain, setFetchPostAgain] = useState(false);
 
   return (
     <MyContext.Provider

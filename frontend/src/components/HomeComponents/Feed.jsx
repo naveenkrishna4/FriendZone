@@ -89,10 +89,12 @@ const Feed = ({ feed }) => {
           {/* content */}
           {feed.content.caption}
         </div>
-        <img
-          className="w-full object-cover rounded-br-md rounded-bl-md"
-          src={feed.content.pic}
-        />
+        {feed.content?.pic && (
+          <img
+            className="h-auto max-w-full object-cover rounded-br-md rounded-bl-md"
+            src={feed.content.pic}
+          />
+        )}
 
         <div className="flex flex-row w-full items-center justify-between px-2 pt-4">
           {/* Like button */}

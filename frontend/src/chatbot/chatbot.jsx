@@ -4,7 +4,6 @@ import "./chatbot.css";
 const Chatbot = () => {
   return (
     <div className="body">
-      <img src="./logo.jpg" />
       <div className="nono">
         <iframe
           allow="microphone;"

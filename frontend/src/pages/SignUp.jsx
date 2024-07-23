@@ -51,11 +51,7 @@ const Signup = () => {
     }
 
     // Check if the selected file is an image (png, jpeg, jpg)
-    if (
-      pic.type === "image/png" ||
-      pic.type === "image/jpeg" ||
-      pic.type === "image/jpeg"
-    ) {
+    if (pic.type === "image/png" || pic.type === "image/jpeg") {
       const data = new FormData();
       data.append("file", pic);
       data.append("upload_preset", "socialMeidaProject");

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { MyContext } from "../../context/MyContext";
 import { AiOutlineSend } from "react-icons/ai";
 import { GiWorld } from "react-icons/gi";

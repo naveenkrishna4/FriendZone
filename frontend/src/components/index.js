@@ -19,7 +19,6 @@ export { default as ButtonLink } from "./ReUseableComponents/ButtonLink";
 export { default as LogoWithName } from "./ReUseableComponents/LogoWithName";
 export { default as UserProfileCard } from "./ReUseableComponents/UserProfileCard";
 export { default as Button } from "./ReUseableComponents/Button.jsx";
-export { default as NotificationInNumber } from "./ReUseableComponents/NotificationInNumber";
 export { default as SideProfileModal } from "./HomeComponents/DesktopProfileModal";
 export { default as SearchModal } from "./HomeComponents/SearchModal";
 export { default as ActivityIcon } from "./ReUseableComponents/ActivityIcon";
